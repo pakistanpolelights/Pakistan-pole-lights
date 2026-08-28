@@ -18,26 +18,48 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--light);color:var(--text);line-height:1.6}
-header{
-  background:rgba(23,23,23,.98);color:#fff;padding:16px 7%;
-  display:flex;justify-content:space-between;align-items:center;
-  position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(212,175,55,.35)
-}
-.logo{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
+header {
+  background: #111;
+  border-bottom: 2px solid #d4af37;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo img{
-  width:150px;
-  height:auto;
-  display:block;
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
-nav{display:flex;gap:24px}
-nav a{color:#eee;text-decoration:none;font-size:14px;font-weight:600}
-nav a:hover{color:var(--gold)}
 
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #d4af37;
+}
+  
 .hero{
   min-height:460px;
   background:radial-gradient(circle at 80% 20%,#34302a 0%,var(--charcoal) 52%,#101010 100%);
@@ -138,15 +160,19 @@ footer{background:#101010;color:#aaa;text-align:center;padding:25px;border-top:1
   }
 }
 
-@media(max-width:900px){
- .products,.features,.project-grid{grid-template-columns:repeat(2,1fr)}
- .stats{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:650px){
- header{padding:15px 6%;flex-direction:column;gap:12px}
- nav{gap:14px;flex-wrap:wrap;justify-content:center}
- .hero{min-height:420px;padding:42px 7%}
- .hero h1{font-size:38px;letter-spacing:-.5px}
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Pakistan Pole Lights">
+  </a>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="#products">Products</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+  
  .hero p{font-size:16px}
  section{padding:55px 6%}
  .stats{padding:0 6%;gap:10px;margin-top:-22px}
